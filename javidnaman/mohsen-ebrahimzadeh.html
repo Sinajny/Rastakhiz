@@ -18,8 +18,7 @@
   --muted:#555;
   --walnut:#6E4B2A;
   --gold:#B08D57;
-  --line:#DDD8CF;
-  --card:#FFFFFF;
+  --line:#B08D57;
 }
 
 *{box-sizing:border-box}
@@ -43,47 +42,51 @@ body{
   width:100%;
   max-width:1180px;
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:64px;
+  grid-template-columns:1fr 1px 1fr;
+  gap:46px;
   align-items:center;
 }
 
-.photo-wrap{
-  background:var(--card);
-  border:1px solid var(--line);
-  padding:18px;
-  border-radius:28px;
-  box-shadow:0 18px 45px rgba(0,0,0,.08);
-}
-
-.photo-wrap img{
+.photo img{
   width:100%;
   display:block;
-  border-radius:18px;
+  border-radius:0;
+}
+
+.vertical-line{
+  width:1px;
+  height:520px;
+  background:linear-gradient(
+    to bottom,
+    transparent,
+    var(--line),
+    transparent
+  );
+  opacity:.85;
 }
 
 .content{
   text-align:center;
 }
 
-.kicker{
-  color:var(--gold);
-  font-size:18px;
-  font-weight:800;
-  letter-spacing:.5px;
-  margin-bottom:18px;
-}
-
 .title{
-  font-size:46px;
-  line-height:1.55;
+  font-size:48px;
+  line-height:1.75;
   font-weight:900;
   color:var(--walnut);
   margin-bottom:28px;
 }
 
+.divider{
+  width:160px;
+  height:1px;
+  background:var(--gold);
+  margin:28px auto;
+  opacity:.75;
+}
+
 .name{
-  font-size:42px;
+  font-size:40px;
   font-weight:900;
   margin-bottom:18px;
 }
@@ -95,20 +98,21 @@ body{
   font-weight:500;
 }
 
-.divider{
-  width:160px;
-  height:1px;
-  background:var(--gold);
-  margin:28px auto;
-  opacity:.7;
-}
-
-.back{
+.help-button{
   display:inline-block;
-  margin-top:30px;
+  margin-top:34px;
+  padding:14px 24px;
+  border:1px solid var(--walnut);
+  border-radius:999px;
   color:var(--walnut);
   text-decoration:none;
   font-weight:800;
+  background:transparent;
+}
+
+.help-button:hover{
+  background:var(--walnut);
+  color:white;
 }
 
 @media(max-width:850px){
@@ -119,15 +123,28 @@ body{
 
   .memorial{
     grid-template-columns:1fr;
-    gap:28px;
+    gap:26px;
   }
 
-  .photo-wrap{
+  .photo{
     order:1;
   }
 
-  .content{
+  .vertical-line{
     order:2;
+    width:160px;
+    height:1px;
+    margin:auto;
+    background:linear-gradient(
+      to right,
+      transparent,
+      var(--line),
+      transparent
+    );
+  }
+
+  .content{
+    order:3;
   }
 
   .title{
@@ -150,12 +167,18 @@ body{
 <main class="page">
   <section class="memorial">
 
+    <div class="photo">
+      <img src="R240101.PNG" alt="محسن ابراهیم‌زاده">
+    </div>
+
+    <div class="vertical-line"></div>
+
     <div class="content">
-      <div class="kicker">جاویدنامان ایران عزیز</div>
 
       <div class="title">
         فرزند ایران<br>
-        و جان‌فدای میهن
+        و<br>
+        جان‌فدای میهن
       </div>
 
       <div class="divider"></div>
@@ -167,11 +190,10 @@ body{
         ۱۹ دی ماه ۱۴۰۴ | تهران عزیز
       </div>
 
-      <a class="back" href="../javidnaman.html">بازگشت به فهرست جاویدنامان</a>
-    </div>
+      <a class="help-button" href="#">
+        به ما در تکمیل اطلاعات کمک کنید
+      </a>
 
-    <div class="photo-wrap">
-      <img src="R240101.PNG" alt="محسن ابراهیم‌زاده">
     </div>
 
   </section>
