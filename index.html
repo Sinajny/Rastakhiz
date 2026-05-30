@@ -1,145 +1,248 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>رستاخیز | فرزندان ایران، جان‌فدایان میهن</title>
-  <meta name="description" content="رستاخیز؛ آرشیو مستند فرزندان ایران و جان‌فدایان میهن." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رستاخیز | فرزندان ایران، جان‌فدایان میهن</title>
+<meta name="description" content="رستاخیز؛ آرشیو مستند فرزندان ایران، جان‌فدایان میهن و روایت‌های فراموش‌نشدنی آزادی ایران.">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Tahoma, Arial, sans-serif;
-      background: #0f0f0f;
-      color: #f5f1e8;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 24px;
-      border-bottom: 1px solid #2b2b2b;
-      background: #111;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+<style>
+:root{
+  --bg:#F3F3F3;
+  --text:#202020;
+  --muted:#666;
+  --walnut:#6E4B2A;
+  --gold:#B08D57;
+  --card:#FFFFFF;
+  --line:#DDD8CF;
+}
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
+*{box-sizing:border-box}
 
-    .menu {
-      font-size: 26px;
-      cursor: pointer;
-    }
+body{
+  margin:0;
+  font-family:'Vazirmatn',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
 
-    .hero {
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 24px;
-      background:
-        linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.75)),
-        radial-gradient(circle at center, #3b2a18, #0f0f0f 70%);
-    }
+header{
+  height:72px;
+  padding:0 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:rgba(243,243,243,.92);
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:10;
+  backdrop-filter:blur(10px);
+}
 
-    .hero h1 {
-      font-size: 44px;
-      margin-bottom: 16px;
-      color: #d6b56d;
-    }
+.logo{
+  font-size:26px;
+  font-weight:800;
+  color:var(--walnut);
+}
 
-    .hero p {
-      font-size: 20px;
-      max-width: 720px;
-      line-height: 2;
-      margin: auto;
-    }
+.menu{
+  font-size:30px;
+  color:var(--walnut);
+}
 
-    .section {
-      padding: 48px 24px;
-      max-width: 1100px;
-      margin: auto;
-    }
+.hero{
+  min-height:70vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:56px 24px;
+  background:
+    linear-gradient(rgba(243,243,243,.78),rgba(243,243,243,.96)),
+    radial-gradient(circle at center,#E2D3BD 0%,#F3F3F3 65%);
+}
 
-    .section h2 {
-      color: #d6b56d;
-      margin-bottom: 20px;
-    }
+.hero-inner{
+  max-width:900px;
+}
 
-    .content-box {
-      background: #181818;
-      border: 1px solid #2f2f2f;
-      border-radius: 18px;
-      padding: 28px;
-      line-height: 2;
-    }
+.label{
+  display:inline-block;
+  padding:8px 16px;
+  border:1px solid var(--gold);
+  border-radius:999px;
+  color:var(--walnut);
+  font-weight:600;
+  margin-bottom:22px;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      margin-top: 20px;
-    }
+h1{
+  font-size:52px;
+  line-height:1.35;
+  margin:0 0 20px;
+  color:var(--walnut);
+}
 
-    .card {
-      background: #181818;
-      border: 1px solid #2f2f2f;
-      border-radius: 16px;
-      padding: 22px;
-      min-height: 120px;
-    }
+.hero p{
+  font-size:21px;
+  line-height:2.1;
+  margin:0 auto;
+  max-width:760px;
+  color:#333;
+}
 
-    .card h3 {
-      margin-top: 0;
-      color: #f5f1e8;
-    }
+.cta-row{
+  margin-top:34px;
+  display:flex;
+  gap:14px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
 
-    .search {
-      width: 100%;
-      padding: 16px;
-      border-radius: 14px;
-      border: 1px solid #444;
-      background: #111;
-      color: #fff;
-      font-size: 16px;
-      box-sizing: border-box;
-    }
+.btn{
+  padding:14px 24px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:700;
+  border:1px solid var(--walnut);
+}
 
-    footer {
-      padding: 32px 24px;
-      text-align: center;
-      border-top: 1px solid #2b2b2b;
-      color: #aaa;
-      background: #0b0b0b;
-    }
+.btn-primary{
+  background:var(--walnut);
+  color:#fff;
+}
 
-    .footer-links {
-      margin-top: 12px;
-    }
+.btn-secondary{
+  color:var(--walnut);
+  background:transparent;
+}
 
-    .footer-links a {
-      color: #d6b56d;
-      text-decoration: none;
-      margin: 0 8px;
-    }
+.section{
+  max-width:1120px;
+  margin:auto;
+  padding:56px 24px;
+}
 
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 34px;
-      }
+.section-title{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:22px;
+}
 
-      .hero p {
-        font-size: 17px;
-      }
-    }
-  </style>
+h2{
+  font-size:30px;
+  margin:0;
+  color:var(--walnut);
+}
+
+.small{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.banner-box{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:34px;
+  box-shadow:0 18px 50px rgba(0,0,0,.06);
+}
+
+.banner-box h3{
+  font-size:26px;
+  margin:0 0 12px;
+  color:var(--walnut);
+}
+
+.banner-box p{
+  line-height:2;
+  color:#444;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:18px;
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:24px;
+  min-height:160px;
+  box-shadow:0 14px 35px rgba(0,0,0,.05);
+}
+
+.card h3{
+  margin:0 0 10px;
+  color:var(--walnut);
+}
+
+.card p{
+  color:#555;
+  line-height:1.9;
+}
+
+.search{
+  width:100%;
+  padding:18px 20px;
+  border-radius:18px;
+  border:1px solid var(--line);
+  background:#fff;
+  font-size:17px;
+  font-family:'Vazirmatn',sans-serif;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:18px;
+}
+
+.stat{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:26px;
+  text-align:center;
+}
+
+.stat strong{
+  display:block;
+  font-size:34px;
+  color:var(--walnut);
+}
+
+footer{
+  background:#E9E6DF;
+  border-top:1px solid var(--line);
+  padding:36px 24px;
+  text-align:center;
+  color:#555;
+}
+
+footer a{
+  color:var(--walnut);
+  text-decoration:none;
+  margin:0 8px;
+  font-weight:600;
+}
+
+@media(max-width:650px){
+  h1{font-size:36px}
+  .hero p{font-size:17px}
+  .section{padding:42px 18px}
+  header{padding:0 18px}
+}
+</style>
 </head>
 
 <body>
@@ -150,25 +253,39 @@
 </header>
 
 <section class="hero">
-  <div>
+  <div class="hero-inner">
+    <div class="label">آرشیو حافظه ملی ایران</div>
     <h1>فرزندان ایران، جان‌فدایان میهن</h1>
     <p>
-      رستاخیز، آرشیوی برای ثبت نام، تصویر و روایت کسانی است
-      که جان خود را در راه آزادی، کرامت و آینده ایران از دست دادند.
+      رستاخیز برای ثبت نام، تصویر و روایت کسانی ساخته می‌شود
+      که جان خود را در مسیر آزادی، کرامت انسانی و آینده ایران از دست دادند.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#javidnam">مشاهده جان‌فدایان ۱۴۰۴</a>
+      <a class="btn btn-secondary" href="#about">درباره رستاخیز</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-title">
+    <h2>Banner A</h2>
+    <span class="small">A1 / A2 / A3</span>
+  </div>
+  <div class="banner-box">
+    <h3>اینجا بنر اصلی پروژه قرار می‌گیرد</h3>
+    <p>
+      این بخش بعداً به چند بنر قابل تغییر تبدیل می‌شود. هر بنر می‌تواند
+      به یک روایت، صفحه ویژه یا محتوای مستند لینک شود.
     </p>
   </div>
 </section>
 
-<section class="section">
-  <h2>Banner A</h2>
-  <div class="content-box">
-    این بخش جای بنر اصلی است. بعداً آن را به A1، A2 و A3 تبدیل می‌کنیم؛
-    هر بنر می‌تواند تصویر، تیتر و لینک اختصاصی داشته باشد.
+<section class="section" id="javidnam">
+  <div class="section-title">
+    <h2>آخرین روایت‌ها</h2>
+    <span class="small">جان‌فدایان ۱۴۰۴</span>
   </div>
-</section>
-
-<section class="section">
-  <h2>آخرین روایت‌ها</h2>
   <div class="cards">
     <div class="card">
       <h3>جاویدنام اول</h3>
@@ -187,24 +304,34 @@
 
 <section class="section">
   <h2>جستجو در نام‌ها</h2>
-  <input class="search" type="text" placeholder="نام، شهر یا سال را جستجو کنید..." />
+  <br>
+  <input class="search" type="text" placeholder="نام، شهر یا سال را جستجو کنید...">
 </section>
 
 <section class="section">
-  <h2>درباره رستاخیز</h2>
-  <div class="content-box">
-    این پروژه برای مستندسازی، یادآوری و حفظ حافظه جمعی ایرانیان شکل گرفته است.
-    هدف ما ثبت دقیق نام‌ها، روایت‌ها و نشانه‌هایی است که نباید فراموش شوند.
+  <div class="stats">
+    <div class="stat"><strong>۱۴۰۴</strong><span>سال ثبت روایت‌ها</span></div>
+    <div class="stat"><strong>۰</strong><span>نام ثبت‌شده</span></div>
+    <div class="stat"><strong>۰</strong><span>شهر ثبت‌شده</span></div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="banner-box">
+    <h2>درباره رستاخیز</h2>
+    <p>
+      رستاخیز یک پروژه مستندسازی و حافظه جمعی است؛ برای آن‌که نام‌ها،
+      چهره‌ها و روایت‌های فرزندان ایران در فراموشی گم نشوند.
+    </p>
   </div>
 </section>
 
 <footer>
-  <div>© رستاخیز | Rastakhiz.ch</div>
-  <div class="footer-links">
-    <a href="#">درباره ما</a>
-    <a href="#">ارتباط با ما</a>
-    <a href="#">جان‌فدایان ۱۴۰۴</a>
-  </div>
+  <div>© Rastakhiz.ch | رستاخیز</div>
+  <br>
+  <a href="#">درباره ما</a>
+  <a href="#">ارتباط با ما</a>
+  <a href="#">جان‌فدایان ۱۴۰۴</a>
 </footer>
 
 </body>
