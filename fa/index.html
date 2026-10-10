@@ -1,338 +1,292 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>رستاخیز | فرزندان ایران، جان‌فدایان میهن</title>
-<meta name="description" content="رستاخیز؛ آرشیو مستند فرزندان ایران، جان‌فدایان میهن و روایت‌های فراموش‌نشدنی آزادی ایران.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>رستاخیز | Rastakhiz</title>
 
-<style>
-:root{
-  --bg:#F3F3F3;
-  --text:#202020;
-  --muted:#666;
-  --walnut:#6E4B2A;
-  --gold:#B08D57;
-  --card:#FFFFFF;
-  --line:#DDD8CF;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-*{box-sizing:border-box}
+  <link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
-body{
-  margin:0;
-  font-family:'Vazirmatn',sans-serif;
-  background:var(--bg);
-  color:var(--text);
-}
+  <style>
+    :root {
+      --iran-green: #1F5A45;
+      --iran-red: #A6292E;
+      --sun-gold: #C6A15B;
+      --ivory: #F7F5EF;
+      --text: #202020;
+      --muted: #66645F;
+    }
 
-header{
-  height:72px;
-  padding:0 24px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  background:rgba(243,243,243,.92);
-  border-bottom:1px solid var(--line);
-  position:sticky;
-  top:0;
-  z-index:10;
-  backdrop-filter:blur(10px);
-}
+    * {
+      box-sizing: border-box;
+    }
 
-.logo{
-  font-size:26px;
-  font-weight:800;
-  color:var(--walnut);
-}
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
+    }
 
-.menu{
-  font-size:30px;
-  color:var(--walnut);
-}
+    body {
+      font-family: "Vazirmatn", sans-serif;
+      background: var(--ivory);
+      color: var(--text);
+    }
 
-.hero{
-  min-height:70vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:56px 24px;
-  background:
-    linear-gradient(rgba(243,243,243,.78),rgba(243,243,243,.96)),
-    radial-gradient(circle at center,#E2D3BD 0%,#F3F3F3 65%);
-}
+    .language-page {
+      min-height: 100vh;
+      min-height: 100dvh;
 
-.hero-inner{
-  max-width:900px;
-}
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-.label{
-  display:inline-block;
-  padding:8px 16px;
-  border:1px solid var(--gold);
-  border-radius:999px;
-  color:var(--walnut);
-  font-weight:600;
-  margin-bottom:22px;
-}
+      padding: 30px 20px;
 
-h1{
-  font-size:52px;
-  line-height:1.35;
-  margin:0 0 20px;
-  color:var(--walnut);
-}
+      position: relative;
+      overflow: hidden;
+    }
 
-.hero p{
-  font-size:21px;
-  line-height:2.1;
-  margin:0 auto;
-  max-width:760px;
-  color:#333;
-}
+    /* خط هویتی ایران */
+    .identity-line {
+      position: absolute;
+      top: 0;
+      left: 0;
 
-.cta-row{
-  margin-top:34px;
-  display:flex;
-  gap:14px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
+      width: 100%;
+      height: 5px;
 
-.btn{
-  padding:14px 24px;
-  border-radius:14px;
-  text-decoration:none;
-  font-weight:700;
-  border:1px solid var(--walnut);
-}
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
 
-.btn-primary{
-  background:var(--walnut);
-  color:#fff;
-}
+    .identity-line .green {
+      background: var(--iran-green);
+    }
 
-.btn-secondary{
-  color:var(--walnut);
-  background:transparent;
-}
+    .identity-line .white {
+      background: #FFFFFF;
+    }
 
-.section{
-  max-width:1120px;
-  margin:auto;
-  padding:56px 24px;
-}
+    .identity-line .red {
+      background: var(--iran-red);
+    }
 
-.section-title{
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-  gap:16px;
-  margin-bottom:22px;
-}
+    .content {
+      width: 100%;
+      max-width: 700px;
 
-h2{
-  font-size:30px;
-  margin:0;
-  color:var(--walnut);
-}
+      text-align: center;
+    }
 
-.small{
-  color:var(--muted);
-  font-size:14px;
-}
+    .symbol {
+      color: var(--sun-gold);
 
-.banner-box{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:28px;
-  padding:34px;
-  box-shadow:0 18px 50px rgba(0,0,0,.06);
-}
+      font-size: 42px;
+      line-height: 1;
 
-.banner-box h3{
-  font-size:26px;
-  margin:0 0 12px;
-  color:var(--walnut);
-}
+      margin-bottom: 25px;
+    }
 
-.banner-box p{
-  line-height:2;
-  color:#444;
-}
+    .brand {
+      margin: 0;
 
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:18px;
-}
+      color: var(--iran-green);
 
-.card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:24px;
-  padding:24px;
-  min-height:160px;
-  box-shadow:0 14px 35px rgba(0,0,0,.05);
-}
+      font-size: clamp(46px, 9vw, 78px);
+      font-weight: 800;
 
-.card h3{
-  margin:0 0 10px;
-  color:var(--walnut);
-}
+      letter-spacing: -2px;
+    }
 
-.card p{
-  color:#555;
-  line-height:1.9;
-}
+    .brand-en {
+      margin-top: 5px;
 
-.search{
-  width:100%;
-  padding:18px 20px;
-  border-radius:18px;
-  border:1px solid var(--line);
-  background:#fff;
-  font-size:17px;
-  font-family:'Vazirmatn',sans-serif;
-}
+      color: var(--muted);
 
-.stats{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:18px;
-}
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
 
-.stat{
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:24px;
-  padding:26px;
-  text-align:center;
-}
+      letter-spacing: 5px;
+    }
 
-.stat strong{
-  display:block;
-  font-size:34px;
-  color:var(--walnut);
-}
+    .gold-line {
+      width: 55px;
+      height: 2px;
 
-footer{
-  background:#E9E6DF;
-  border-top:1px solid var(--line);
-  padding:36px 24px;
-  text-align:center;
-  color:#555;
-}
+      margin: 30px auto;
 
-footer a{
-  color:var(--walnut);
-  text-decoration:none;
-  margin:0 8px;
-  font-weight:600;
-}
+      background: var(--sun-gold);
+    }
 
-@media(max-width:650px){
-  h1{font-size:36px}
-  .hero p{font-size:17px}
-  .section{padding:42px 18px}
-  header{padding:0 18px}
-}
-</style>
+    .select-text {
+      margin-bottom: 28px;
+
+      color: var(--muted);
+
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .languages {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+
+      gap: 14px;
+    }
+
+    .language {
+      width: 180px;
+
+      padding: 17px 20px;
+
+      border: 1px solid rgba(31, 90, 69, 0.28);
+      border-radius: 12px;
+
+      background: transparent;
+
+      color: var(--iran-green);
+
+      text-decoration: none;
+
+      font-size: 17px;
+      font-weight: 600;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .language:hover {
+      background: var(--iran-green);
+      color: #FFFFFF;
+
+      border-color: var(--iran-green);
+
+      transform: translateY(-2px);
+    }
+
+    .language.fa {
+      direction: rtl;
+    }
+
+    .language.en,
+    .language.de {
+      font-family: Arial, sans-serif;
+    }
+
+    .footer-mark {
+      position: absolute;
+      bottom: 24px;
+
+      color: var(--muted);
+
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+
+      letter-spacing: 3px;
+
+      opacity: 0.65;
+    }
+
+    @media (max-width: 650px) {
+
+      .languages {
+        flex-direction: column;
+        align-items: center;
+
+        gap: 11px;
+      }
+
+      .language {
+        width: min(100%, 300px);
+      }
+
+      .brand {
+        letter-spacing: -1px;
+      }
+
+      .symbol {
+        font-size: 36px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <div class="logo">رستاخیز</div>
-  <div class="menu">☰</div>
-</header>
+  <main class="language-page">
 
-<section class="hero">
-  <div class="hero-inner">
-    <div class="label">آرشیو حافظه ملی ایران</div>
-    <h1>فرزندان ایران، جان‌فدایان میهن</h1>
-    <p>
-      رستاخیز برای ثبت نام، تصویر و روایت کسانی ساخته می‌شود
-      که جان خود را در مسیر آزادی، کرامت انسانی و آینده ایران از دست دادند.
-    </p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="#javidnam">مشاهده جان‌فدایان ۱۴۰۴</a>
-      <a class="btn btn-secondary" href="#about">درباره رستاخیز</a>
+    <div class="identity-line">
+      <div class="green"></div>
+      <div class="white"></div>
+      <div class="red"></div>
     </div>
-  </div>
-</section>
 
-<section class="section">
-  <div class="section-title">
-    <h2>Banner A</h2>
-    <span class="small">A1 / A2 / A3</span>
-  </div>
-  <div class="banner-box">
-    <h3>اینجا بنر اصلی پروژه قرار می‌گیرد</h3>
-    <p>
-      این بخش بعداً به چند بنر قابل تغییر تبدیل می‌شود. هر بنر می‌تواند
-      به یک روایت، صفحه ویژه یا محتوای مستند لینک شود.
-    </p>
-  </div>
-</section>
+    <div class="content">
 
-<section class="section" id="javidnam">
-  <div class="section-title">
-    <h2>آخرین روایت‌ها</h2>
-    <span class="small">جان‌فدایان ۱۴۰۴</span>
-  </div>
-  <div class="cards">
-    <div class="card">
-      <h3>جاویدنام اول</h3>
-      <p>روایت کوتاه اینجا قرار می‌گیرد.</p>
+      <div class="symbol">☀</div>
+
+      <h1 class="brand">رستاخیز</h1>
+
+      <div class="brand-en">
+        RASTAKHIZ
+      </div>
+
+      <div class="gold-line"></div>
+
+      <div class="select-text">
+        زبان را انتخاب کنید
+      </div>
+
+      <div class="languages">
+
+        <a
+          class="language fa"
+          href="fa/"
+          lang="fa"
+        >
+          فارسی
+        </a>
+
+        <a
+          class="language en"
+          href="en/"
+          lang="en"
+        >
+          English
+        </a>
+
+        <a
+          class="language de"
+          href="de/"
+          lang="de"
+        >
+          Deutsch
+        </a>
+
+      </div>
+
     </div>
-    <div class="card">
-      <h3>جاویدنام دوم</h3>
-      <p>روایت کوتاه اینجا قرار می‌گیرد.</p>
+
+    <div class="footer-mark">
+      RASTAKHIZ.CH
     </div>
-    <div class="card">
-      <h3>جاویدنام سوم</h3>
-      <p>روایت کوتاه اینجا قرار می‌گیرد.</p>
-    </div>
-  </div>
-</section>
 
-<section class="section">
-  <h2>جستجو در نام‌ها</h2>
-  <br>
-  <input class="search" type="text" placeholder="نام، شهر یا سال را جستجو کنید...">
-</section>
-
-<section class="section">
-  <div class="stats">
-    <div class="stat"><strong>۱۴۰۴</strong><span>سال ثبت روایت‌ها</span></div>
-    <div class="stat"><strong>۰</strong><span>نام ثبت‌شده</span></div>
-    <div class="stat"><strong>۰</strong><span>شهر ثبت‌شده</span></div>
-  </div>
-</section>
-
-<section class="section" id="about">
-  <div class="banner-box">
-    <h2>درباره رستاخیز</h2>
-    <p>
-      رستاخیز یک پروژه مستندسازی و حافظه جمعی است؛ برای آن‌که نام‌ها،
-      چهره‌ها و روایت‌های فرزندان ایران در فراموشی گم نشوند.
-    </p>
-  </div>
-</section>
-
-<footer>
-  <div>© Rastakhiz.ch | رستاخیز</div>
-  <br>
-  <a href="#">درباره ما</a>
-  <a href="#">ارتباط با ما</a>
-  <a href="#">جان‌فدایان ۱۴۰۴</a>
-</footer>
+  </main>
 
 </body>
 </html>
