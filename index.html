@@ -34,6 +34,27 @@ body{
   color:var(--text);
 }
 
+body::before{
+  content:"";
+  position:fixed;
+  inset:-18px;
+  background:
+    linear-gradient(rgba(20,14,10,.38),rgba(20,14,10,.48)),
+    url('5931479247895597392.jpg') center center / cover no-repeat;
+  filter:blur(3px);
+  transform:scale(1.035);
+  z-index:-2;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(35,24,16,.12);
+  z-index:-1;
+  pointer-events:none;
+}
+
 .language-page{
   min-height:100vh;
   min-height:100dvh;
@@ -51,7 +72,7 @@ body{
   width:520px;
   height:520px;
   border-radius:50%;
-  background:radial-gradient(circle,rgba(176,141,87,.14) 0%,rgba(176,141,87,.05) 38%,rgba(243,243,243,0) 72%);
+  background:radial-gradient(circle,rgba(176,141,87,.20) 0%,rgba(176,141,87,.07) 40%,rgba(0,0,0,0) 72%);
   pointer-events:none;
 }
 
@@ -65,7 +86,8 @@ body{
 
 .brand{
   margin:0;
-  color:var(--walnut);
+  color:#F7F5EF;
+  text-shadow:0 2px 18px rgba(0,0,0,.28);
   font-size:clamp(52px,9vw,82px);
   font-weight:800;
   line-height:1.2;
@@ -90,7 +112,8 @@ body{
 
 .prompt{
   margin:0 0 25px;
-  color:var(--muted);
+  color:#F3EEE5;
+  text-shadow:0 1px 10px rgba(0,0,0,.35);
   font-size:15px;
   font-weight:400;
 }
@@ -105,10 +128,12 @@ body{
 .language{
   width:170px;
   padding:15px 18px;
-  border:1px solid var(--line);
+  border:1px solid rgba(247,245,239,.52);
   border-radius:14px;
-  background:rgba(255,255,255,.58);
-  color:var(--walnut);
+  background:rgba(25,18,12,.28);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  color:#F7F5EF;
   text-decoration:none;
   font-size:16px;
   font-weight:600;
@@ -139,7 +164,7 @@ body{
   bottom:24px;
   left:50%;
   transform:translateX(-50%);
-  color:var(--muted);
+  color:#F7F5EF;
   font-family:Arial,sans-serif;
   font-size:10px;
   letter-spacing:3px;
