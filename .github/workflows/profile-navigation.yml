@@ -1,0 +1,44 @@
+name: Add navigation to memorial profiles
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/profile-navigation.yml'
+      - 'site-nav.js'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Add shared navigation to every localized profile
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          changed = 0
+          for lang in ("fa", "en", "de"):
+              for file in Path(lang, "child-of-iran-martyr-for-the-homeland").glob("*/index.html"):
+                  html = file.read_text(encoding="utf-8")
+                  if 'src="/site-nav.js"' in html:
+                      continue
+                  if not re.search(r"</body\s*>", html, re.I):
+                      raise RuntimeError(f"Missing body closing tag: {file}")
+                  html = re.sub(r"</body\s*>", '<script src="/site-nav.js" defer></script></body>', html, count=1, flags=re.I)
+                  file.write_text(html, encoding="utf-8")
+                  changed += 1
+          print(f"Updated {changed} profile pages")
+          PY
+      - name: Commit navigation changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fa/child-of-iran-martyr-for-the-homeland en/child-of-iran-martyr-for-the-homeland de/child-of-iran-martyr-for-the-homeland
+          if ! git diff --cached --quiet; then
+            git commit -m "Add Home and language switch to all 300 memorial profiles"
+            git push
+          fi
