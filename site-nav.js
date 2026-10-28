@@ -1,0 +1,30 @@
+(function(){
+"use strict";
+var path=window.location.pathname;
+if(path==="/" || path==="/index.html")return;
+var lang=(path.match(/^\/(fa|en|de)(?:\/|$)/)||[])[1];
+if(!lang)return;
+var names={fa:{home:"خانه",switch:"تغییر زبان",label:"انتخاب زبان"},en:{home:"Home",switch:"Language",label:"Choose language"},de:{home:"Startseite",switch:"Sprache",label:"Sprache auswählen"}};
+var words=names[lang];
+var old=document.querySelectorAll(".rz-home-link");old.forEach(function(el){el.remove()});
+var css=document.createElement("style");
+css.textContent=".rz-nav{position:fixed;right:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:9999;display:flex;gap:8px;align-items:center;direction:ltr;font-family:Vazirmatn,Arial,sans-serif}.rz-nav-control{box-sizing:border-box;min-width:114px;height:44px;padding:10px 12px;display:inline-flex;align-items:center;justify-content:center;gap:7px;background:#fff;color:#6E4B2A!important;border:1px solid #B08D57;border-radius:999px;font:600 14px/1.1 Vazirmatn,Arial,sans-serif;text-decoration:none!important;box-shadow:0 4px 18px #0002;cursor:pointer;white-space:nowrap}.rz-nav-control:hover,.rz-nav-control:focus-visible,.rz-nav-option:hover,.rz-nav-option:focus-visible{background:#f7f5ef;outline:2px solid #B08D57;outline-offset:2px}.rz-nav-icon{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}.rz-nav-popup{position:absolute;right:0;bottom:calc(100% + 10px);width:180px;border:1px solid #B08D57;background:#fff;border-radius:15px;padding:8px;box-shadow:0 6px 22px #0002;display:flex;flex-direction:column;gap:4px}.rz-nav-popup[hidden]{display:none}.rz-nav-option{display:block;padding:10px 12px;border-radius:9px;color:#6E4B2A!important;text-decoration:none!important;font:600 14px Vazirmatn,Arial,sans-serif;text-align:left}.rz-nav-option[aria-current=page]{background:#f2ece3;font-weight:800}@media(max-width:420px){.rz-nav{right:10px;bottom:calc(12px + env(safe-area-inset-bottom,0px))}.rz-nav-control{min-width:100px;height:42px;padding:9px 10px;font-size:13px}}";
+document.head.appendChild(css);
+var bar=document.createElement("nav");bar.className="rz-nav";bar.setAttribute("aria-label",words.label);
+var home=document.createElement("a");home.className="rz-nav-control";home.href="/";home.setAttribute("aria-label",words.home);
+home.innerHTML='<svg class="rz-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h14V9M9 21v-8h6v8"/></svg>';
+var homeText=document.createElement("span");homeText.textContent=words.home;home.appendChild(homeText);bar.appendChild(home);
+var button=document.createElement("button");button.type="button";button.className="rz-nav-control";button.setAttribute("aria-haspopup","true");button.setAttribute("aria-expanded","false");
+button.innerHTML='<svg class="rz-nav-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 4 6 4 9s-1 6-4 9M12 3c-3 3-4 6-4 9s1 6 4 9"/></svg>';
+var buttonText=document.createElement("span");buttonText.textContent=words.switch;button.appendChild(buttonText);bar.appendChild(button);
+var popup=document.createElement("div");popup.className="rz-nav-popup";popup.hidden=true;popup.setAttribute("role","group");popup.setAttribute("aria-label",words.label);
+var suffix=path.replace(/^\/(fa|en|de)(?=\/|$)/,"")||"/index.html";
+if(suffix==="/")suffix="/index.html";
+["fa","en","de"].forEach(function(target){var a=document.createElement("a");a.className="rz-nav-option";a.href="/"+target+suffix;a.textContent=target==="fa"?"فارسی":target==="en"?"English":"Deutsch";a.lang=target;if(target===lang)a.setAttribute("aria-current","page");popup.appendChild(a)});
+bar.appendChild(popup);
+function close(){popup.hidden=true;button.setAttribute("aria-expanded","false")}
+button.addEventListener("click",function(){var opening=popup.hidden;popup.hidden=!opening;button.setAttribute("aria-expanded",opening?"true":"false")});
+document.addEventListener("click",function(e){if(!bar.contains(e.target))close()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape"){close();button.focus()}});
+document.body.appendChild(bar);
+})();
